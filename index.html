@@ -1,0 +1,59 @@
+# Title: The Really Awesome Super Cool But Not That Specific Song Time Calculator
+
+#Input requirements: 
+
+#1 Name of the song - Done 
+#2 Length in seconds - Done 
+#3 Number of times the song has been played - Done 
+
+#I declared variables for name, time and plays for each song with no value so that gets.chomp can modify the value of the variable. 
+
+# Creates an empty nest for user input
+name = ""
+time = ""
+plays = 0
+four_total = Array.new
+songs = ""
+
+#Intro
+puts "Hi! Welcome to the song time calculator! please enter your four favorite songs!"
+
+# Loops my code four times (for four different songs)
+4.times do
+  
+# Song Plays
+puts "How many times did you play the song?"
+plays = gets.to_i
+
+# Song length
+puts "How many seconds did you listen to the song?"
+time = gets.to_i
+
+#Song Name
+puts "What was the song called?"
+name = gets.chomp 
+
+# Calculating the listening time for each song by multuplying the song length in seconds by the number of plays.
+ length = time * plays 
+
+# Puts the song length inputs into an array.
+ four_total << length
+
+# Summary/output for the name, number of plays and length in seconds for each song.
+
+    puts "You have played " + name + " for"
+    puts length 
+    puts "seconds"
+  end
+  
+   # To find the total listening time for all four songs, I put the time variable inputs into an array, then calculated the sum of the inputs and printed the output of that array (output requirements 2).
+  puts "The total play time for these four songs is"
+  puts four_total.inject(0){|sum,i| sum + i }
+  puts "The song you listened to the most was played for"
+  puts four_total.max
+  puts "seconds."
+  
+#Output requirements:
+# 1 Listening time for each song - Done 
+# 2 Total listening time for all songs -Done 
+# 3 Which song has been listened to the longest total amount of time - Done, longest listened but without name.
